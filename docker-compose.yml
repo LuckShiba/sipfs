@@ -1,0 +1,17 @@
+version: '3'
+
+volumes: 
+  ipfsvol:
+
+services:
+  sipfs:
+    container_name: sipfs
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sipfs
+    volumes:
+      - ipfsvol:/root/.jsipfs
+    ports:
+      - 127.0.0.1:${PORT}:4000
+
