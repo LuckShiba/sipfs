@@ -69,6 +69,6 @@ IPFS.create().then(async ipfs => {
     res.status(status).send(err);
   });
 
-  const PORT = process.env.PORT || 4000;
+  const PORT = process.env.APP_PORT || 4000;
   app.listen(PORT, () => console.log(`online at port ${PORT}`));
 });
